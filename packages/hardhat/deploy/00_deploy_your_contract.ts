@@ -38,8 +38,8 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
   const builderStakes = Array(builderList.length).fill("500000000000000000");
   await yourContract.addBatch(builderList, builderStakes);
 
-  // console.log("🏷 handing ownership over to atg.eth");
-  // await yourContract.transferOwnership("0x34aA3F359A9D614239015126635CE7732c18fDF3");
+  // console.log("🏷 handing ownership over to paulgadi.eth");
+  await yourContract.transferOwnership("0x1e55C85801a2C4F0beC57c84742a8eF3d72dE57B");
 };
 
 export default deployYourContract;

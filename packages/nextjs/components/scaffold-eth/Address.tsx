@@ -35,7 +35,10 @@ export const Address = ({ address, disableAddressLink, format }: TAddressProps) 
   }, [fetchedEns]);
 
   useEffect(() => {
-    setEnsAvatar(fetchedEnsAvatar);
+    // hack to replace the ens avatar url with a cloudflare gateway url
+    const ensAvatar = fetchedEnsAvatar?.replace("https://gateway.ipfs.io/", "https://cloudflare-ipfs.com/");
+
+    setEnsAvatar(ensAvatar);
   }, [fetchedEnsAvatar]);
 
   // Skeleton UI
